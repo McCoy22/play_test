@@ -1,0 +1,9 @@
+MenuItem(main):
+  name: Main Menu
+ 
+MenuItem(home):
+  text: Home
+  action: Application.index
+  parent: main
+  properties:
+    extraClass: homeLink
