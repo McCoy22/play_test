@@ -4,4 +4,27 @@
     // Open the home page, and check that no error occured
     open('/')
     assertNotTitle('Application error')
+    
+    // Check that it is the Hello World application
+    assertTextPresent('MoA's first App!')
+    
+    // Submit the form
+    clickAndWait('css=input[type=submit]')
+    
+    // Check the error
+    assertTextPresent('Fehler: Bitte Namen angeben!')
+    
+    // Type the name and submit
+    type('css=input[type=text]', 'bob')
+    clickAndWait('css=input[type=submit]')
+    
+    // Check the result
+    assertTextPresent('Wer sagt denn Hallo? (bob)')
+    assertTextPresent('MoA's first App!')
+    
+    // Check the back link
+    clickAndWait('link=Zur&uuml;ck')
+    
+    // Home page?
+    assertTextNotPresent('(bob)')
 #{/selenium}

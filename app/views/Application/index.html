@@ -1,4 +1,16 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+#{navigation.default mainMenu /}
+<hr>
+
+#{if flash.error}
+    <p style="color:red">
+        ${flash.error}
+    </p>
+#{/if}
+
+<form action="@{Application.sayHello()}" method="GET">
+	<input type="text" name="myname"/>
+	<input type="submit"/>
+</form>
