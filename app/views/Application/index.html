@@ -3,4 +3,14 @@
 
 #{navigation.default mainMenu /}
 <hr>
-#{welcome /}
+
+#{if flash.error}
+    <p style="color:red">
+        ${flash.error}
+    </p>
+#{/if}
+
+<form action="@{Application.sayHello()}" method="GET">
+	<input type="text" name="myname"/>
+	<input type="submit"/>
+</form>
