@@ -15,4 +15,10 @@ test-result
 eclipse
 server.pid
 
+/tmp
+/modules
+/lib
+/test-result
+/logs
+
 navigation-0.1
