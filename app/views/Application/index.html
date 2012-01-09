@@ -1,16 +1,38 @@
-#{extends 'main.html' /}
-#{set title:'Home' /}
+#{extends 'main.html' /} 
+#{set title:'Home' /} 
 
+*{
 #{navigation.default mainMenu /}
 <hr>
 
 #{if flash.error}
-    <p style="color:red">
-        ${flash.error}
-    </p>
+<p style="color: red">${flash.error}</p>
 #{/if}
 
 <form action="@{Application.sayHello()}" method="GET">
-	<input type="text" name="myname"/>
-	<input type="submit"/>
+	<input type="text" name="myname" /> <input type="submit" />
 </form>
+}*
+
+#{if frontPost}
+    
+    #{display post:frontPost, as:'home' /}
+    
+    #{if olderPosts.size()}
+    
+        <div class="older-posts">
+            <h3>Older posts <span class="from">from this blog</span></h3>
+        
+            #{list items:olderPosts, as:'oldPost'}
+                #{display post:oldPost, as:'teaser' /}
+            #{/list}
+        </div>
+        
+    #{/if}
+    
+#{/if}
+ 
+
+#{else}
+<div class="empty">Derzeit keine Beitr&auml;ge.</div>
+#{/else}
