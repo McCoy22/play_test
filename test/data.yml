@@ -1,5 +1,4 @@
 # Test data
-
 User(bob):
     email:          bob@gmail.com
     password:       secret
