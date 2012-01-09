@@ -10,6 +10,7 @@ public class BasicTest extends UnitTest {
 		Fixtures.deleteDatabase();
 	}
 
+	
 	@Test
 	public void testUser() {
 		new User("bob@example.com", "geheim", "Bob").save();
