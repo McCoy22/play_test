@@ -1,5 +1,5 @@
 # Application dependencies
 
 require:
-    - play -> navigation 0.1
+    - play -> crud
 
