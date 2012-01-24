@@ -12,3 +12,7 @@ password=Passwort
 fullname=Kompletter Name
 isAdmin=Admin?
 posts=Beitr&auml;ge
+
+secure.username=Email:
+secure.password=Kennwort:
+secure.signin=Einloggen...
